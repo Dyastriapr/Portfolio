@@ -15,20 +15,20 @@ export default function Content() {
         <div className="shadow-lg rounded-bl-xl rounded-tr-xl overflow-hidden">
           <div className="flex">
             <div
-              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "about" ? "bg-black text-white shadow-md" : "text-gray-700 bg-base-100"}`}
+              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "about" ? "bg-black text-white shadow-md" : "text-white bg-black"}`}
               onClick={() => setActiveTab("about")}
             >
               About
             </div>
             <div
-              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "project" ? "bg-black text-white shadow-md" : "text-gray-700 bg-base-100"}`}
+              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "project" ? "bg-black text-white shadow-md" : "text-white bg-black"}`}
               onClick={() => setActiveTab("project")}
             >
               Project
             </div>
           </div>
         </div>
-      </div>
+      </div>                   
 
       {/* Konten utama */}
       <div className="p-4">
