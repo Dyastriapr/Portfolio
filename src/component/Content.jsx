@@ -35,8 +35,8 @@ export const Content = () => {
           {/* Tombol Download CV - DIPERBARUI */}
           <div className="mt-8">
             <a 
-              href="src/assets/cv/CV_DyasTriAp.pdf"
-              download="CV_Dyas_Tri_Apriliansyah.pdf"
+              href="/cv/CV_DyasTriAp.pdf"
+              download="CV_DyasTriAp.pdf"
               className="bg-black text-white font-kronaOne text-base sm:text-lg py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors duration-300"
             >
               Download CV
