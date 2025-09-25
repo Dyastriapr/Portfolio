@@ -14,7 +14,7 @@ export const Project = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const projects = [
-    { id: 1, title: 'Bina Geneerasi', description: 'Bina Generasi adalah Website Parenting...', image: binaImg, category: 'Website', link: "https://bina-generasi.vercel.app/" },
+    { id: 1, title: 'Bina Generasi', description: 'Bina Generasi adalah Website Parenting...', image: binaImg, category: 'Website', link: "https://bina-generasi.vercel.app/" },
     { id: 2, title: 'Sisi Kidul', description: 'Website ini mendukung inisiatif Merdeka Belajar...', image: kidulImg, category: 'Website', link: "https://sisikidul-test1.vercel.app/" },
     { id: 3, title: 'Desain UI/UX LPPM IBIK', description: "Merancang UI dan UX untuk LPPM IBIK", image: lppmImg, category: 'UI/UX', link: "https://www.figma.com/design/14QZ8ED8gRnIDITHbBfyll/Desain-LPPM-IBIK" },
     { id: 4, title: 'Desain UI/UX CDC IBIK', description: 'Merancang UI dan UX untuk CDC IBIK', image: cdcImg, category: 'UI/UX', link: "https://www.figma.com/design/X5E4kdH6NEYANvKu3DXh7c/Desain-CDC-IBIK" },
