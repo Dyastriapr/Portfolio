@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const binaImg = "src/assets/img/BinaGnerasi.png";
-const kidulImg = "src/assets/img/sisikidul.png";
-const cdcImg = "src/assets/img/cdc.png";
-const lppmImg = "src/assets/img/lppm.png";
-const analisisImg = "src/assets/img/analisis_sentimen.png";
-const uppksImg ="src/assets/img/Uppks.png"
-const pcImg="src/assets/img/pc.png"
-const convImg ="src/assets/img/konv.png"
+// GAMBAR DIPANGGIL MENGGUNAKAN IMPORT
+import binaImg from '../assets/img/BinaGnerasi.png';
+import kidulImg from '../assets/img/sisikidul.png';
+import cdcImg from '../assets/img/cdc.png';
+import lppmImg from '../assets/img/lppm.png';
+import analisisImg from '../assets/img/analisis_sentimen.png';
+import uppksImg from '../assets/img/Uppks.png';
+import pcImg from '../assets/img/pc.png';
+import convImg from '../assets/img/konv.png';
 
 export const Project = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const projects = [
-    { id: 1, title: 'Bina Generasi', description: 'Bina Generasi adalah Website Parenting...', image: binaImg, category: 'Website', link :"https://bina-generasi.vercel.app/" },
-    { id: 2, title: 'Sisi Kidul', description: 'Website ini mendukung inisiatif Merdeka Belajar...', image: kidulImg, category: 'Website', link:"https://sisikidul-test1.vercel.app/" },
-    { id: 3, title: 'Desain UI/UX LPPM IBIK', description: "Merancang UI dan UX untuk LPPM IBIK", image: lppmImg, category: 'UI/UX', link:"https://www.figma.com/design/14QZ8ED8gRnIDITHbBfyll/Desain-LPPM-IBIK" },
-    { id: 4, title: 'Desain UI/UX CDC IBIK', description:'Merancang UI dan UX untuk CDC IBIK', image: cdcImg, category: 'UI/UX', link:"https://www.figma.com/design/X5E4kdH6NEYANvKu3DXh7c/Desain-CDC-IBIK" },
-    { id: 6, title: 'Analisis Sentimen Menggunakan BERT', description: "Mengimplementasikan model AI berbasis BERT...", image: analisisImg, category: 'AI', link : "https://drive.google.com/file/d/13LnfSrvZSNG6XdzSKzxemiNdIQ2DBijY/view?usp=sharing" },
+    { id: 1, title: 'Bina Generasi', description: 'Bina Generasi adalah Website Parenting...', image: binaImg, category: 'Website', link: "https://bina-generasi.vercel.app/" },
+    { id: 2, title: 'Sisi Kidul', description: 'Website ini mendukung inisiatif Merdeka Belajar...', image: kidulImg, category: 'Website', link: "https://sisikidul-test1.vercel.app/" },
+    { id: 3, title: 'Desain UI/UX LPPM IBIK', description: "Merancang UI dan UX untuk LPPM IBIK", image: lppmImg, category: 'UI/UX', link: "https://www.figma.com/design/14QZ8ED8gRnIDITHbBfyll/Desain-LPPM-IBIK" },
+    { id: 4, title: 'Desain UI/UX CDC IBIK', description: 'Merancang UI dan UX untuk CDC IBIK', image: cdcImg, category: 'UI/UX', link: "https://www.figma.com/design/X5E4kdH6NEYANvKu3DXh7c/Desain-CDC-IBIK" },
+    { id: 6, title: 'Analisis Sentimen Menggunakan BERT', description: "Mengimplementasikan model AI berbasis BERT...", image: analisisImg, category: 'AI', link: "https://drive.google.com/file/d/13LnfSrvZSNG6XdzSKzxemiNdIQ2DBijY/view?usp=sharing" },
     { id: 7, title: 'UPPKS Matahari', description: "Membangun platform website informatif untuk UPPKS Matahari...", image: uppksImg, category: 'Website' },
     { id: 8, title: 'Aplikasi Filtering Pengolahan Citra', description: "Mengembangkan aplikasi web untuk filtering gambar...", image: pcImg, category: 'Website' },
     { id: 9, title: 'Konversi Format Skripsi ke Jurnal', description: "Menciptakan alat bantu konversi skripsi ke jurnal...", image: convImg, category: 'Website' },
@@ -83,13 +84,7 @@ export const Project = () => {
 
 // Main App component
 export default function App() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Krona+One&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-  }, []);
-
+  // useEffect untuk memuat font tidak diperlukan jika font sudah di-link di index.html atau diatur di CSS global
   return (
     <div className="App">
       <Project />
