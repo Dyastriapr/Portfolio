@@ -1,148 +1,72 @@
-import { useState } from "react";
-import BinaGenerasi from '../assets/img/BinaGnerasi.png';
-import SisiKidul from '../assets/img/sisikidul.png';
-import E2F from '../assets/img/edufuturefund.png';
-import Conskrip from '../assets/img/conskrip.png';
+import React from 'react'
+import DyasImg from '../assets/img/Dyas.png'
+import Bg from '../assets/img/Background.png'
+import Email from '../assets/img/email.png'
 
-
-export default function Content() {
-  const [activeTab, setActiveTab] = useState("about");
-
+export const Content = () => {
   return (
-    <div className="card bg-white shadow-md w-full h-full rounded-2xl p-6 relative">
-      {/* Navbar di pojok kanan atas */}
-      <div className="absolute top-0 right-0">
-        <div className="shadow-lg rounded-bl-xl rounded-tr-xl overflow-hidden">
-          <div className="flex">
-            <div
-              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "about" ? "bg-black text-white shadow-md" : "text-white bg-base-100"}`}
-              onClick={() => setActiveTab("about")}
+    <div className="relative h-screen overflow-hidden mx-auto px-4 sm:px-8">
+      {/* Background */}
+      <img 
+        src={Bg} 
+        alt="Bg" 
+        className="absolute left-0 top-0 w-full h-full object-cover z-0"
+      />
+
+      {/* Title */}
+      <div className="relative z-30 font-kronaOne text-xl sm:text-2xl my-4 
+                      text-center sm:text-left text-black">
+        PORTFOLIO
+      </div>
+
+      {/* Konten Utama (Nama, Tombol, Foto) */}
+      <div className="relative h-full"> 
+        
+        {/* Nama & Tombol CV */}
+        <div className="relative z-5 flex flex-col justify-start pt-24 sm:justify-center sm:pt-0 h-full font-kronaOne 
+                        items-center sm:items-start text-center sm:text-left">
+          <div className="text-black text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
+            DYAS TRI
+          </div>
+          <div className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-9xl text-stroke-thin text-stroke-black-500">
+            APRILIANSYAH
+          </div>
+
+          {/* Tombol Download CV - DIPERBARUI */}
+          <div className="mt-8">
+            <a 
+              href="src/assets/cv/CV_DyasTriAp.pdf"
+              download="CV_Dyas_Tri_Apriliansyah.pdf"
+              className="bg-black text-white font-kronaOne text-base sm:text-lg py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors duration-300"
             >
-              About
-            </div>
-            <div
-              className={`px-6 py-2 cursor-pointer transition-all ${activeTab === "project" ? "bg-black text-white shadow-md" : "text-white bg-base-100"}`}
-              onClick={() => setActiveTab("project")}
-            >
-              Project
-            </div>
+              Download CV
+            </a>
           </div>
         </div>
-      </div>                   
 
-      {/* Konten utama */}
-      <div className="p-4">
-        {activeTab === "about" ? (
-          <div>
-            <div className="text-2xl font-bold text-white">About Me</div>
-            <div className="divider divider-neutral"></div>
-            <p className="text-black">
-              Saya adalah seorang Programmer Website yang solid dalam pengembangan web, baik di sisi Frontend. Saya memiliki minat yang mendalam dalam menciptakan aplikasi web yang responsif, intuitif, dan ramah pengguna. Selain itu, saya juga tertarik dalam pengembangan Kecerdasan Buatan (AI), dan terus memperluas pengetahuan saya di bidang ini untuk mengintegrasikan teknologi AI ke dalam aplikasi web modern. Dengan kombinasi keahlian dalam pemrograman dan minat terhadap inovasi teknologi, saya selalu berusaha untuk memberikan solusi yang efektif dan inovatif dalam setiap proyek yang saya kerjakan.
-            </p>
+        {/* Foto Dyas */}
+        <img 
+          src={DyasImg} 
+          alt="Dyas" 
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1/2 w-auto z-10 
+                     sm:top-10 sm:h-full sm:right-0 sm:left-auto sm:translate-x-0"
+        />
+      </div>
 
-            <div className="mt-5">
-              <div className="text-xl font-bold text-black">Minat Saya</div>
-              <div className="flex flex-wrap justify-center gap-5 md:flex-nowrap">
-                <div className="card bg-white w-96 shadow-2xl">
-                  <div className="card-body text-black">
-                    <div className="font-bold">Web Design</div>
-                    <p>Website yang dirancang dengan mempertimbangkan UI/UX, menawarkan antarmuka yang modern dan interaktif.</p>
-                  </div>
-                </div>
-                <div className="card bg-white shadow-2xl  text-black">
-                  <div className="card-body">
-                    <div className="font-bold">Kecerdasan Buatan</div>
-                    <p>Saya minat diberbagai jenis teknologi yang berkaitan dengan AI seperti Chatbot, Machine Learning, Deep Learning, dan lain-lain.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className="text-2xl font-bold">My Project</div>
-            <div className="divider divider-neutral"></div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-h-[500px] overflow-y-auto mt-5">
-              {/* Proyek 1 */}
-              <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                  <img src={BinaGenerasi} alt="Bina Generasi" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">Bina Generasi</h2>
-                  <p>Bina Generasi adalah Website Parenting, panduan orang tua untuk membesarkan anaknya dan konsultasi terkait parenting.</p>
-                  <div className="card-actions justify-end">
-                    <button
-                      className="btn bg-black text-white"
-                      onClick={() => window.open('https://bina-generasi.vercel.app/', '_blank')}
-                    >
-                      Visit
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Proyek 2 */}
-              <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                  <img src={SisiKidul} alt="Sisi Kidul" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">Sisi Kidul</h2>
-                  <p>Sisi Kidul adalah platform yang menawarkan informasi mengenai budaya dan wisata di daerah Sisi Kidul.</p>
-                  <div className="card-actions justify-end">
-                    <button
-                      className="btn  bg-black text-white"
-                      onClick={() => window.open('https://sisikidul-test1.vercel.app/', '_blank')}
-                    >
-                      Visit
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Proyek 3 */}
-              <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                  <img src={E2F} alt="Sisi Kidul" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">EduFutureFund</h2>
-                  <p>Sisi Kidul adalah platform yang menawarkan informasi mengenai budaya dan wisata di daerah Sisi Kidul.</p>
-                  <div className="card-actions justify-end">
-                    <button
-                      className="btn bg-black text-white"
-                      onClick={() => window.open('', '_blank')}
-                    >
-                      Visit
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Proyek 4 */}
-              <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
-                  <img src={Conskrip} alt="Sisi Kidul" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">Conskrip</h2>
-                  <p>Aplikasi Konsversi Skripsi menjadi jurnal secara otomatis ( hanya abstrak )</p>
-                  <div className="card-actions justify-end">
-                    <button
-                      className="btn bg-black text-white"
-                      onClick={() => window.open('', '_blank')}
-                    >
-                      Visit
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        )}
+      {/* Icon Email - DIPERBARUI */}
+     <div className="fixed bottom-5 right-5 flex gap-3 z-30">
+        <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=dyastriap12@gmail.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <img 
+            src={Email} 
+            alt="Email" 
+            className="w-10 sm:w-12 md:w-14"
+          />
+        </a>
       </div>
     </div>
-  );
+  )
 }
