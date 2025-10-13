@@ -7,6 +7,12 @@ import figma from '../assets/img/Figma.png';
 import bootstrap from '../assets/img/Bootstrap.png';
 import nodejs from '../assets/img/Node Js.png';
 import github from '../assets/img/github.png'
+import html from '../assets/img/html.png'
+import css from '../assets/img/css.png'
+import javascript from '../assets/img/js.png'
+import laravel from '../assets/img/laravel.png'
+import mysql from '../assets/img/mysql.png'
+import php from '../assets/img/php.png'
 
 const icons = [
   { id: 1, name: 'Vue', icon: vue },
@@ -16,7 +22,13 @@ const icons = [
   { id: 5, name: 'Figma', icon: figma },
   { id: 6, name: 'Bootstrap', icon: bootstrap },
   { id: 7, name: 'NodeJS', icon: nodejs },
-  { id: 8, name: 'Github', icon: github}
+  { id: 8, name: 'Github', icon: github},
+  {id:9, name: 'Html', icon: html},
+  {id:10, name: 'Css', icon: css},
+  {id:11, name: 'JavaScript', icon: javascript},
+  {id:12, name: 'Laravel', icon: laravel},
+  {id:13, name: 'MySQL', icon: mysql},
+  {id:14, name: 'PHP', icon: php},
 ];
 
 const Tech = () => {
