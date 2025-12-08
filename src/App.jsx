@@ -8,14 +8,17 @@ import Tech from "./component/Tech";
 
 export default function App() {
   return (
-    <div className="container w-full mx-auto flex justify-center items-center bg-">
-      <div className="text-white">
+    <div>
       <Content />
+    <div className="container w-full mx-auto flex justify-center items-center">
+      <div className="text-white">
+      
       <About  />
       <Tech />
       <Project />
       <Contact />
       </div>
+    </div>
     </div>
   );
 }

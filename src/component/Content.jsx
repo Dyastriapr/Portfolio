@@ -1,72 +1,54 @@
 import React from 'react'
-import DyasImg from '../assets/img/Dyas.png'
-import Bg from '../assets/img/Background.png'
-import Email from '../assets/img/email.png'
+import Squares from '../components/Squares.jsx'
+import ShinyText from '../components/ShinyText';
+import TextType from '../components/TextType';
+import SplitText from "../components/SplitText";
 
+const handleAnimationComplete = () => {
+  console.log('All letters have animated!');
+};
 export const Content = () => {
   return (
-    <div className="relative h-screen overflow-hidden mx-auto px-4 sm:px-8">
-      {/* Background */}
-      <img 
-        src={Bg} 
-        alt="Bg" 
-        className="absolute left-0 top-0 w-full h-full object-cover z-0"
-      />
+ 
+    <div className="relative h-screen overflow-hidden sm:px-8">
+     
+      <div className="absolute inset-0 z-0">
+        <Squares />
+      </div>
 
-      {/* Title */}
-      <div className="relative z-30 font-kronaOne text-xl sm:text-2xl my-4 
-                      text-center sm:text-left text-black">
+      <div className="relative z-40 font-kronaOne text-xl sm:text-2xl my-4 
+                      text-center sm:text-left text-white">
         PORTFOLIO
       </div>
 
-      {/* Konten Utama (Nama, Tombol, Foto) */}
-      <div className="relative h-full"> 
-        
-        {/* Nama & Tombol CV */}
-        <div className="relative z-5 flex flex-col justify-start pt-24 sm:justify-center sm:pt-0 h-full font-kronaOne 
-                        items-center sm:items-start text-center sm:text-left">
-          <div className="text-black text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
-            DYAS TRI
-          </div>
-          <div className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-9xl text-stroke-thin text-stroke-black-500">
-            APRILIANSYAH
-          </div>
-
-          {/* Tombol Download CV - DIPERBARUI */}
-          <div className="mt-8">
-            <a 
-              href="/cv/CV_DyasTriAp.pdf"
-              download="CV_DyasTriAp.pdf"
-              className="bg-black text-white font-kronaOne text-base sm:text-lg py-4 px-10 rounded-lg hover:bg-gray-800 transition-colors duration-300"
-            >
-              Download CV
-            </a>
-          </div>
-        </div>
-
-        {/* Foto Dyas */}
-        <img 
-          src={DyasImg} 
-          alt="Dyas" 
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1/2 w-auto z-10 
-                     sm:top-10 sm:h-full sm:right-0 sm:left-auto sm:translate-x-0"
-        />
-      </div>
-
-      {/* Icon Email - DIPERBARUI */}
-     <div className="fixed bottom-5 right-5 flex gap-3 z-30">
-        <a 
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=dyastriap12@gmail.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          <img 
-            src={Email} 
-            alt="Email" 
-            className="w-10 sm:w-12 md:w-14"
+      <div className="z-40 flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> 
+        <div className="relative z-50 font-kronaOne text-center mb-[-3rem]">
+          <ShinyText 
+            text="DYAS TRI APRILIANSYAH" 
+            disabled={false} 
+            speed={3} 
+            className='custom-class text-4xl sm:text-6xl md:text-8xl lg:text-9xl' 
           />
-        </a>
+        </div>
+        
+        <div className='relative z-42 text-white mt-20 font-kronaOne'>
+          <SplitText
+            text="From concept to commit, I turn imagination into interaction."
+            className="text-3xl font-semibold text-center"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            onLetterAnimationComplete={handleAnimationComplete}
+          />
       </div>
+      </div>
+      
     </div>
   )
 }
