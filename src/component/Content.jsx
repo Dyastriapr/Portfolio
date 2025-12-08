@@ -34,7 +34,7 @@ export const Content = () => {
         <div className='relative z-42 text-white mt-20 font-kronaOne'>
           <SplitText
             text="From concept to commit, I turn imagination into interaction."
-            className="text-3xl font-semibold text-center"
+            className=" font-semibold text-center sm:text-xl md:text-2xl lg:text-3xl"
             delay={100}
             duration={0.6}
             ease="power3.out"
