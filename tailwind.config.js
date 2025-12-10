@@ -9,10 +9,22 @@ export default {
           "0%": { "background-position": "100%" },
           "100%": { "background-position": "-100%" },
         },
+        "bounce-slow": {
+          "0%, 100%": {
+            transform: "translateY(-15%)", // Dimulai sedikit di atas
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
+            transform: "translateY(0)", // Jatuh ke posisi awal
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+          },
+        },
       },
       animation: {
         shine: "shine 5s linear infinite",
+        "bounce-slow": "bounce-slow 2s infinite", // Durasi 2 detik, berulang tak terbatas
       },
+
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         kronaOne: ["Krona One", "sans-serif"],
