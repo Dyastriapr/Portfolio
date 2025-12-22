@@ -3,7 +3,7 @@ import vue from '../assets/img/Vue.js.png';
 import tailwind from '../assets/img/Tailwind CSS.png';
 import react from '../assets/img/React.png';
 import python from '../assets/img/Python.png';
-import figma from '../assets/img/figma.png';
+import figma from '../assets/img/Figma.png';
 import bootstrap from '../assets/img/Bootstrap.png';
 import nodejs from '../assets/img/nodejs.png';
 import github from '../assets/img/github.png';
