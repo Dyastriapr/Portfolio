@@ -2,7 +2,7 @@ import React from 'react';
 import vue from '../assets/img/Vue.js.png';
 import tailwind from '../assets/img/Tailwind CSS.png';
 import react from '../assets/img/React.png';
-import python from '../assets/img/python.png';
+import python from '../assets/img/Python.png';
 import figma from '../assets/img/figma.png';
 import bootstrap from '../assets/img/Bootstrap.png';
 import nodejs from '../assets/img/nodejs.png';
@@ -46,9 +46,9 @@ const Tech = () => {
   };
 
   return (
-    <div className="py-12 md:px-10 w-full font-kronaOne text-black container mx-auto">
+    <div className="py-6 md:px-10 w-full font-kronaOne text-black container mx-auto">
       
-      <h2 className="text-xl md:text-3xl  font-extrabold text-center mb-10 tracking-widest uppercase">
+      <h2 className="text-xl md:text-3xl  font-extrabold text-center mb-10 uppercase">
         Tech Stack
       </h2>
 
