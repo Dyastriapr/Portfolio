@@ -2,71 +2,94 @@ import React from 'react';
 import vue from '../assets/img/Vue.js.png';
 import tailwind from '../assets/img/Tailwind CSS.png';
 import react from '../assets/img/React.png';
-import python from '../assets/img/Python.png';
-import figma from '../assets/img/Figma.png';
+import python from '../assets/img/python.png';
+import figma from '../assets/img/figma.png';
 import bootstrap from '../assets/img/Bootstrap.png';
-import nodejs from '../assets/img/Node Js.png';
-import github from '../assets/img/github.png'
-import html from '../assets/img/html.png'
-import css from '../assets/img/css.png'
-import javascript from '../assets/img/js.png'
-import laravel from '../assets/img/laravel.png'
-import mysql from '../assets/img/mysql.png'
-import php from '../assets/img/php.png'
-
-const icons = [
-  { id: 1, name: 'Vue', icon: vue },
-  { id: 2, name: 'Tailwind', icon: tailwind },
-  { id: 3, name: 'React', icon: react },
-  { id: 4, name: 'Python', icon: python },
-  { id: 5, name: 'Figma', icon: figma },
-  { id: 6, name: 'Bootstrap', icon: bootstrap },
-  { id: 7, name: 'NodeJS', icon: nodejs },
-  { id: 8, name: 'Github', icon: github},
-  {id:9, name: 'Html', icon: html},
-  {id:10, name: 'Css', icon: css},
-  {id:11, name: 'JavaScript', icon: javascript},
-  {id:12, name: 'Laravel', icon: laravel},
-  {id:13, name: 'MySQL', icon: mysql},
-  {id:14, name: 'PHP', icon: php},
-];
+import nodejs from '../assets/img/nodejs.png';
+import github from '../assets/img/github.png';
+import nextjs from '../assets/img/nextjs.png';
+import laravel from '../assets/img/laravel.png';
+import mysql from '../assets/img/mysql.png';
+import mongo from '../assets/img/mongoDB.png';
+import postman from '../assets/img/postman.png';
+import canva from '../assets/img/canva.png';
+import trelo from '../assets/img/trelo.png';
 
 const Tech = () => {
-  return (
-    <div className="text-black font-kronaOne mt-10 px-6">
-      <div className="text-3xl sm:text-4xl mb-8 text-center md:text-left">
-        Tech Stack
-      </div>
+  const techStack = {
+    Frontend: [
+      { name: 'Next JS', icon: nextjs },
+      { name: 'React', icon: react },
+      { name: 'Vue', icon: vue },
+      { name: 'Tailwind', icon: tailwind },
+      { name: 'Bootstrap', icon: bootstrap },
+    ],
+    Backend: [
+      { name: 'Laravel', icon: laravel },
+      { name: 'NodeJS', icon: nodejs },
+      
+       { name: 'Next JS', icon: nextjs },
+    ],
+    Database: [
+      { name: 'MySQL', icon: mysql },
+      { name: 'Mongo DB', icon: mongo },
+    ],
+    Others: [
+      { name: 'Figma', icon: figma },
+      { name: 'Github', icon: github },
+      { name: 'Python', icon: python },
+      { name: 'Postman', icon: postman },
+      { name: 'Canva', icon: canva },
+      { name: 'Trello', icon: trelo },  
 
-      {/* Grid responsif */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
-        {icons.map((item, i) => (
-          <div
-            key={item.id}
-            className="floating flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
-            style={{
-              animation: `float ${4 + (i % 3)}s ease-in-out infinite`,
-            }}
+    ],
+  };
+
+  return (
+    <div className="py-12 md:px-10 w-full font-kronaOne text-black container mx-auto">
+      
+      <h2 className="text-xl md:text-3xl  font-extrabold text-center mb-10 tracking-widest uppercase">
+        Tech Stack
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        {Object.entries(techStack).map(([category, items]) => (
+          <div 
+            key={category} 
+            className="bg-white border-2 border-gray-100 rounded-3xl p-4 md:p-6 shadow-md flex flex-col items-start basis-[calc(50%-1rem)] md:basis-auto md:min-w-[300px] md:max-w-[350px]"
           >
-            <img
-              src={item.icon}
-              alt={item.name}
-              className="w-full h-full object-contain hover:scale-125 transition-transform duration-300"
-            />
+            {/* Nama Kategori */}
+            <h3 className="text-[10px] md:text-lg font-bold text-black uppercase tracking-[0.1em] md:tracking-[0.2em] mb-6 md:mb-8 border-b-2 border-gray-50 w-full text-left pb-3 md:pb-4">
+              {category}
+            </h3>
+
+            {/* List Icon */}
+            <div className="flex flex-wrap justify-start gap-3 md:gap-8">
+              {items.map((tech) => (
+                <div key={tech.name} className="flex flex-col items-center group">
+                  {/* Ikon Container */}
+                  <div className="w-8 h-8 md:w-16 md:h-16 flex items-center justify-center transition-all duration-500 transform group-hover:scale-110">
+                    <img
+                      src={tech.icon}
+                      alt={tech.name}
+                      /* DI SINI KUNCINYA:
+                         - grayscale: membuat gambar hitam putih secara default
+                         - group-hover:grayscale-0: mengembalikan warna saat card/ikon di-hover
+                         - transition & duration: agar transisi warna halus
+                      */
+                      className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  </div>
+                  {/* Label */}
+                  <span className="text-[7px] md:text-xs mt-2 md:mt-3 font-semibold text-gray-400 group-hover:text-gray-700 transition-colors duration-500 uppercase text-center">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-
-      {/* Animasi */}
-      <style>
-        {`
-          @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
-          }
-        `}
-      </style>
     </div>
   );
 };

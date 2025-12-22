@@ -5,6 +5,10 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
         shine: {
           "0%": { "background-position": "100%" },
           "100%": { "background-position": "-100%" },
@@ -21,6 +25,10 @@ export default {
         },
       },
       animation: {
+        // Default (mobile) akan lebih lambat
+        marquee: "marquee 40s linear infinite",
+        // lg:marquee-desktop akan lebih cepat
+        "marquee-desktop": "marquee 25s linear infinite",
         shine: "shine 5s linear infinite",
         "bounce-slow": "bounce-slow 2s infinite", // Durasi 2 detik, berulang tak terbatas
       },
