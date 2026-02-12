@@ -9,6 +9,7 @@ import analisisImg from '../assets/img/analisis_sentimen.png';
 import uppksImg from '../assets/img/Uppks.png';
 import pcImg from '../assets/img/pc.png';
 import convImg from '../assets/img/konv.png';
+import designImg from '../assets/img/desain.png';
 
 export const Project = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -57,7 +58,7 @@ export const Project = () => {
     { 
       id: 3, 
       title: 'UI/UX LPPM IBIK', 
-      category: 'UI/UX', 
+      category: 'Design or UI/UX', 
       description: "Perancangan antarmuka sistem informasi penelitian dan pengabdian masyarakat untuk dosen.", 
       image: [lppmImg], 
       tech: ['Figma'], 
@@ -66,7 +67,7 @@ export const Project = () => {
     { 
       id: 4, 
       title: 'UI/UX CDC IBIK', 
-      category: 'UI/UX', 
+      category: 'Design or UI/UX', 
       description: 'Dashboard Career Development Center guna memantau alumni dan peluang kerja.', 
       image: [cdcImg], 
       tech: ['Figma'], 
@@ -108,6 +109,15 @@ export const Project = () => {
       tech: ['Python', 'Text Summarization'], 
       link: null 
     },
+     { 
+      id: 9, 
+      title: 'Project Design', 
+      category: 'Design or UI/UX', 
+      description: "Semua Desain Poster yang pernah saya buat", 
+      image: [designImg], 
+      tech: ['Figma', 'Canva'], 
+      link: "https://www.figma.com/design/CODIjrHYbFn89D8DPZgN37/Poster?node-id=0-1&t=g2tTGgla3FAHWQEe-1" 
+    },
   ];
 
   const filteredProjects = activeFilter === 'All' ? projects : projects.filter(p => p.category === activeFilter);
@@ -127,7 +137,7 @@ export const Project = () => {
 
         {/* FILTER */}
         <div className="flex flex-wrap gap-2 mb-10 justify-center">
-          {['All', 'UI/UX', 'Website', 'AI'].map((filter) => (
+          {['All', 'Design or UI/UX', 'Website', 'AI'].map((filter) => (
             <button
               key={filter}
               className={`${activeFilter === filter ? 'bg-black text-white' : 'bg-gray-50 text-gray-400 hover:text-black'} px-5 py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase transition-all duration-300`}
